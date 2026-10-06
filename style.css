@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #080010;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 45px;
+    margin-bottom: 30px;
+    animation: glow 2s infinite alternate;
+}
+
+#output {
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.message {
+    font-size: 25px;
+    margin: 15px 0;
+    animation: appear 3s ease-in-out forwards;
+    text-shadow: 0 0 10px #ff4da6,
+                 0 0 20px #ff4da6,
+                 0 0 40px #ff4da6;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: scale(0.5) translateY(30px);
+    }
+
+    20% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+
+    80% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.8) translateY(-30px);
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #ff4da6;
+    }
+
+    to {
+        text-shadow: 0 0 30px #ff1493,
+                     0 0 60px #ff1493;
+    }
+}
