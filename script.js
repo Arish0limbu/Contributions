@@ -1,23 +1,105 @@
-const output = document.getElementById("output");
+const heartsContainer = document.querySelector(".hearts");
 
-const message =
-    "I love u to budi 🥰🥰🥰 miss u to so much 😘 ummmaa.";
+/* =========================
+   FLOATING HEARTS
+========================= */
 
-function display() {
-    const text = document.createElement("div");
+const heartSymbols = [
+    "❤️",
+    "💕",
+    "💗",
+    "💖",
+    "🥰",
+    "😘"
+];
 
-    text.className = "message";
-    text.textContent = message;
+function createHeart() {
 
-    output.appendChild(text);
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    heart.textContent =
+        heartSymbols[
+            Math.floor(
+                Math.random() * heartSymbols.length
+            )
+        ];
+
+    heart.style.left =
+        Math.random() * 100 + "%";
+
+    const size =
+        14 + Math.random() * 22;
+
+    heart.style.fontSize =
+        size + "px";
+
+    const duration =
+        6 + Math.random() * 8;
+
+    heart.style.animationDuration =
+        duration + "s";
+
+    heart.style.animationDelay =
+        Math.random() * 2 + "s";
+
+    heartsContainer.appendChild(heart);
 
     setTimeout(() => {
-        text.remove();
-    }, 3000);
+        heart.remove();
+    }, (duration + 3) * 1000);
 }
 
-// Infinity ♾️
-setInterval(display, 500);
+/* Continuously create hearts */
+setInterval(createHeart, 700);
 
-// First message immediately
-display();
+
+/* =========================
+   SHOOTING STARS
+========================= */
+
+function createShootingStar() {
+
+    const star =
+        document.createElement("div");
+
+    star.className =
+        "shooting-star";
+
+    star.style.left =
+        Math.random() * 100 + "%";
+
+    star.style.top =
+        Math.random() * 45 + "%";
+
+    document
+        .querySelector(".scene")
+        .appendChild(star);
+
+    setTimeout(() => {
+        star.remove();
+    }, 2200);
+}
+
+/* Random shooting stars */
+setInterval(() => {
+
+    if (Math.random() > 0.35) {
+        createShootingStar();
+    }
+
+}, 2500);
+
+
+/* =========================
+   START HEARTS
+========================= */
+
+for (let i = 0; i < 8; i++) {
+
+    setTimeout(
+        createHeart,
+        i * 400
+    );
+}
