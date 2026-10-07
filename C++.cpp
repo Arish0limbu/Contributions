@@ -40,6 +40,7 @@ void heading(string header)
     clearscreen();
     line();
     center((100 - header.length()) / 2);
+    cout << header << endl;
     line();
 }
 
@@ -58,8 +59,8 @@ void createfile()
 
 void infoinput()
 {
+    heading("datainput");
 
-    
     string name, age, address;
 
     cout << "Enter your name: ";
