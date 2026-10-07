@@ -57,18 +57,26 @@ void createfile()
     }
 }
 
+bool adminlogin()
+{
+    heading("|| Admin Login Page ||");
+    string id, pass;
+    cout << "Admin ID: ";
+    getline(cin, id);
+    cout << "Admin Password: ";
+    getline(cin, pass);
+
+    if (id == "admin" || pass == "1234")
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
 void infoinput()
 {
-    heading("datainput");
-
-    string name, age, address;
-
-    cout << "Enter your name: ";
-    getline(cin, name);
-    cout << "Enter age: ";
-    cin >> age;
-    cout << "Enter address: ";
-    getline(cin, address);
 }
 
 int main()
