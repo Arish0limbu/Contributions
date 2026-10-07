@@ -22,6 +22,11 @@ void center(int c = 45)
     
 }
 
+void pausescreen()
+{
+    system("pause");
+}
+
 void createfile()
 {
     ofstream record("student.txt");
