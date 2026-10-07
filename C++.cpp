@@ -35,6 +35,14 @@ void clearscreen()
 #endif
 }
 
+void heading(string header)
+{
+    clearscreen();
+    line();
+    center((100 - header.length()) / 2);
+    line();
+}
+
 void createfile()
 {
     ofstream record("student.txt");
@@ -51,6 +59,7 @@ void createfile()
 void infoinput()
 {
 
+    
     string name, age, address;
 
     cout << "Enter your name: ";
