@@ -1,10 +1,19 @@
 #include <iostream>
+#include <fstream>
+#include <string>
 
 using namespace std;
-
 int main()
 {
-    cout << " Hello World ";
+    ofstream record("student.txt");
+    if (record.is_open())
+    {
+        cout << "File created sucessfully." << endl;
+    }
+    else
+    {
+        cout << "Failed to creat file." << endl;
+    }
 
     return 0;
 }
