@@ -19,12 +19,20 @@ void center(int c = 45)
     {
         cout << " ";
     }
-    
 }
 
 void pausescreen()
 {
     system("pause");
+}
+
+void clearscreen()
+{
+#if WIN32
+    system("cls");
+#else
+    system("clear");
+#endif
 }
 
 void createfile()
