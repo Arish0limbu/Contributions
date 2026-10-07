@@ -3,7 +3,8 @@
 #include <string>
 
 using namespace std;
-int main()
+
+void createfile()
 {
     ofstream record("student.txt");
     if (record.is_open())
@@ -12,8 +13,27 @@ int main()
     }
     else
     {
-        cout << "Failed to creat file." << endl;
+        cout << "Failed to create file." << endl;
     }
+}
+
+void infoinput()
+{
+
+    string name, age, address;
+
+    cout << "Enter your name: ";
+    getline(cin, name);
+    cout << "Enter age: ";
+    cin >> age;
+    cout << "Enter address: ";
+    getline(cin, address);
+}
+
+int main()
+{
+    createfile();
+    infoinput();
 
     return 0;
 }
